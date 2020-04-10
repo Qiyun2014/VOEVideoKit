@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB924AB0243ECBEA00F8761D /* IMG_0007.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AB924AAF243ECBEA00F8761D /* IMG_0007.mp4 */; };
+		AB93702F243C2F14003D3723 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93702E243C2F14003D3723 /* AppDelegate.m */; };
+		AB937032243C2F14003D3723 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937031243C2F14003D3723 /* SceneDelegate.m */; };
+		AB937035243C2F14003D3723 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937034243C2F14003D3723 /* ViewController.m */; };
+		AB937038243C2F14003D3723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB937036243C2F14003D3723 /* Main.storyboard */; };
+		AB93703A243C2F15003D3723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB937039243C2F15003D3723 /* Assets.xcassets */; };
+		AB93703D243C2F15003D3723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB93703B243C2F15003D3723 /* LaunchScreen.storyboard */; };
+		AB937040243C2F15003D3723 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93703F243C2F15003D3723 /* main.m */; };
+		AB93704A243C2F15003D3723 /* VideoReverseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937049243C2F15003D3723 /* VideoReverseTests.m */; };
+		AB937055243C2F15003D3723 /* VideoReverseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937054243C2F15003D3723 /* VideoReverseUITests.m */; };
+		AB937065243C2F75003D3723 /* VOEVideoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937064243C2F75003D3723 /* VOEVideoReader.m */; };
+		AB937068243C2F8D003D3723 /* VOEVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937067243C2F8D003D3723 /* VOEVideo.m */; };
+		AB93706B243C2FB9003D3723 /* VOEVideWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93706A243C2FB9003D3723 /* VOEVideWriter.m */; };
+		AB93706E243C441E003D3723 /* VOEFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93706D243C441E003D3723 /* VOEFrame.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB937046243C2F15003D3723 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB937022243C2F14003D3723 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB937029243C2F14003D3723;
+			remoteInfo = VideoReverse;
+		};
+		AB937051243C2F15003D3723 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB937022243C2F14003D3723 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB937029243C2F14003D3723;
+			remoteInfo = VideoReverse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AB39DDB5244023F700FDD7CD /* VOEKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEKit.h; sourceTree = "<group>"; };
+		AB924AAF243ECBEA00F8761D /* IMG_0007.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0007.mp4; sourceTree = "<group>"; };
+		AB93702A243C2F14003D3723 /* VideoReverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoReverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB93702D243C2F14003D3723 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AB93702E243C2F14003D3723 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AB937030243C2F14003D3723 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		AB937031243C2F14003D3723 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		AB937033243C2F14003D3723 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AB937034243C2F14003D3723 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AB937037243C2F14003D3723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB937039243C2F15003D3723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB93703C243C2F15003D3723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB93703E243C2F15003D3723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB93703F243C2F15003D3723 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB937045243C2F15003D3723 /* VideoReverseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoReverseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB937049243C2F15003D3723 /* VideoReverseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoReverseTests.m; sourceTree = "<group>"; };
+		AB93704B243C2F15003D3723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB937050243C2F15003D3723 /* VideoReverseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoReverseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB937054243C2F15003D3723 /* VideoReverseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoReverseUITests.m; sourceTree = "<group>"; };
+		AB937056243C2F15003D3723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB937063243C2F75003D3723 /* VOEVideoReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEVideoReader.h; sourceTree = "<group>"; };
+		AB937064243C2F75003D3723 /* VOEVideoReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEVideoReader.m; sourceTree = "<group>"; };
+		AB937066243C2F8D003D3723 /* VOEVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEVideo.h; sourceTree = "<group>"; };
+		AB937067243C2F8D003D3723 /* VOEVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEVideo.m; sourceTree = "<group>"; };
+		AB937069243C2FB9003D3723 /* VOEVideWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEVideWriter.h; sourceTree = "<group>"; };
+		AB93706A243C2FB9003D3723 /* VOEVideWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEVideWriter.m; sourceTree = "<group>"; };
+		AB93706C243C441E003D3723 /* VOEFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEFrame.h; sourceTree = "<group>"; };
+		AB93706D243C441E003D3723 /* VOEFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEFrame.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB937027243C2F14003D3723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB937042243C2F15003D3723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB93704D243C2F15003D3723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB937021243C2F14003D3723 = {
+			isa = PBXGroup;
+			children = (
+				AB93702C243C2F14003D3723 /* VideoReverse */,
+				AB937048243C2F15003D3723 /* VideoReverseTests */,
+				AB937053243C2F15003D3723 /* VideoReverseUITests */,
+				AB93702B243C2F14003D3723 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB93702B243C2F14003D3723 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB93702A243C2F14003D3723 /* VideoReverse.app */,
+				AB937045243C2F15003D3723 /* VideoReverseTests.xctest */,
+				AB937050243C2F15003D3723 /* VideoReverseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB93702C243C2F14003D3723 /* VideoReverse */ = {
+			isa = PBXGroup;
+			children = (
+				AB924AAF243ECBEA00F8761D /* IMG_0007.mp4 */,
+				AB937062243C2F2C003D3723 /* VOEKit */,
+				AB93702D243C2F14003D3723 /* AppDelegate.h */,
+				AB93702E243C2F14003D3723 /* AppDelegate.m */,
+				AB937030243C2F14003D3723 /* SceneDelegate.h */,
+				AB937031243C2F14003D3723 /* SceneDelegate.m */,
+				AB937033243C2F14003D3723 /* ViewController.h */,
+				AB937034243C2F14003D3723 /* ViewController.m */,
+				AB937036243C2F14003D3723 /* Main.storyboard */,
+				AB937039243C2F15003D3723 /* Assets.xcassets */,
+				AB93703B243C2F15003D3723 /* LaunchScreen.storyboard */,
+				AB93703E243C2F15003D3723 /* Info.plist */,
+				AB93703F243C2F15003D3723 /* main.m */,
+			);
+			path = VideoReverse;
+			sourceTree = "<group>";
+		};
+		AB937048243C2F15003D3723 /* VideoReverseTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB937049243C2F15003D3723 /* VideoReverseTests.m */,
+				AB93704B243C2F15003D3723 /* Info.plist */,
+			);
+			path = VideoReverseTests;
+			sourceTree = "<group>";
+		};
+		AB937053243C2F15003D3723 /* VideoReverseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AB937054243C2F15003D3723 /* VideoReverseUITests.m */,
+				AB937056243C2F15003D3723 /* Info.plist */,
+			);
+			path = VideoReverseUITests;
+			sourceTree = "<group>";
+		};
+		AB937062243C2F2C003D3723 /* VOEKit */ = {
+			isa = PBXGroup;
+			children = (
+				AB937063243C2F75003D3723 /* VOEVideoReader.h */,
+				AB937064243C2F75003D3723 /* VOEVideoReader.m */,
+				AB937066243C2F8D003D3723 /* VOEVideo.h */,
+				AB937067243C2F8D003D3723 /* VOEVideo.m */,
+				AB93706C243C441E003D3723 /* VOEFrame.h */,
+				AB93706D243C441E003D3723 /* VOEFrame.m */,
+				AB937069243C2FB9003D3723 /* VOEVideWriter.h */,
+				AB93706A243C2FB9003D3723 /* VOEVideWriter.m */,
+				AB39DDB5244023F700FDD7CD /* VOEKit.h */,
+			);
+			path = VOEKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB937029243C2F14003D3723 /* VideoReverse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB937059243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverse" */;
+			buildPhases = (
+				AB937026243C2F14003D3723 /* Sources */,
+				AB937027243C2F14003D3723 /* Frameworks */,
+				AB937028243C2F14003D3723 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoReverse;
+			productName = VideoReverse;
+			productReference = AB93702A243C2F14003D3723 /* VideoReverse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AB937044243C2F15003D3723 /* VideoReverseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB93705C243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverseTests" */;
+			buildPhases = (
+				AB937041243C2F15003D3723 /* Sources */,
+				AB937042243C2F15003D3723 /* Frameworks */,
+				AB937043243C2F15003D3723 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB937047243C2F15003D3723 /* PBXTargetDependency */,
+			);
+			name = VideoReverseTests;
+			productName = VideoReverseTests;
+			productReference = AB937045243C2F15003D3723 /* VideoReverseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AB93704F243C2F15003D3723 /* VideoReverseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB93705F243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverseUITests" */;
+			buildPhases = (
+				AB93704C243C2F15003D3723 /* Sources */,
+				AB93704D243C2F15003D3723 /* Frameworks */,
+				AB93704E243C2F15003D3723 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB937052243C2F15003D3723 /* PBXTargetDependency */,
+			);
+			name = VideoReverseUITests;
+			productName = VideoReverseUITests;
+			productReference = AB937050243C2F15003D3723 /* VideoReverseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB937022243C2F14003D3723 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = qiyun;
+				TargetAttributes = {
+					AB937029243C2F14003D3723 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					AB937044243C2F15003D3723 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = AB937029243C2F14003D3723;
+					};
+					AB93704F243C2F15003D3723 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = AB937029243C2F14003D3723;
+					};
+				};
+			};
+			buildConfigurationList = AB937025243C2F14003D3723 /* Build configuration list for PBXProject "VideoReverse" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB937021243C2F14003D3723;
+			productRefGroup = AB93702B243C2F14003D3723 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB937029243C2F14003D3723 /* VideoReverse */,
+				AB937044243C2F15003D3723 /* VideoReverseTests */,
+				AB93704F243C2F15003D3723 /* VideoReverseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB937028243C2F14003D3723 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB93703D243C2F15003D3723 /* LaunchScreen.storyboard in Resources */,
+				AB93703A243C2F15003D3723 /* Assets.xcassets in Resources */,
+				AB924AB0243ECBEA00F8761D /* IMG_0007.mp4 in Resources */,
+				AB937038243C2F14003D3723 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB937043243C2F15003D3723 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB93704E243C2F15003D3723 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB937026243C2F14003D3723 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB937035243C2F14003D3723 /* ViewController.m in Sources */,
+				AB93702F243C2F14003D3723 /* AppDelegate.m in Sources */,
+				AB93706E243C441E003D3723 /* VOEFrame.m in Sources */,
+				AB937040243C2F15003D3723 /* main.m in Sources */,
+				AB937032243C2F14003D3723 /* SceneDelegate.m in Sources */,
+				AB93706B243C2FB9003D3723 /* VOEVideWriter.m in Sources */,
+				AB937068243C2F8D003D3723 /* VOEVideo.m in Sources */,
+				AB937065243C2F75003D3723 /* VOEVideoReader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB937041243C2F15003D3723 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB93704A243C2F15003D3723 /* VideoReverseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB93704C243C2F15003D3723 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB937055243C2F15003D3723 /* VideoReverseUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB937047243C2F15003D3723 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB937029243C2F14003D3723 /* VideoReverse */;
+			targetProxy = AB937046243C2F15003D3723 /* PBXContainerItemProxy */;
+		};
+		AB937052243C2F15003D3723 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB937029243C2F14003D3723 /* VideoReverse */;
+			targetProxy = AB937051243C2F15003D3723 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AB937036243C2F14003D3723 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB937037243C2F14003D3723 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AB93703B243C2F15003D3723 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB93703C243C2F15003D3723 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB937057243C2F15003D3723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AB937058243C2F15003D3723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB93705A243C2F15003D3723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLZ8G467JP;
+				INFOPLIST_FILE = VideoReverse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB93705B243C2F15003D3723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLZ8G467JP;
+				INFOPLIST_FILE = VideoReverse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AB93705D243C2F15003D3723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLZ8G467JP;
+				INFOPLIST_FILE = VideoReverseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoReverse.app/VideoReverse";
+			};
+			name = Debug;
+		};
+		AB93705E243C2F15003D3723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLZ8G467JP;
+				INFOPLIST_FILE = VideoReverseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoReverse.app/VideoReverse";
+			};
+			name = Release;
+		};
+		AB937060243C2F15003D3723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLZ8G467JP;
+				INFOPLIST_FILE = VideoReverseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VideoReverse;
+			};
+			name = Debug;
+		};
+		AB937061243C2F15003D3723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLZ8G467JP;
+				INFOPLIST_FILE = VideoReverseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VideoReverse;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB937025243C2F14003D3723 /* Build configuration list for PBXProject "VideoReverse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB937057243C2F15003D3723 /* Debug */,
+				AB937058243C2F15003D3723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB937059243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB93705A243C2F15003D3723 /* Debug */,
+				AB93705B243C2F15003D3723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB93705C243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB93705D243C2F15003D3723 /* Debug */,
+				AB93705E243C2F15003D3723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB93705F243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB937060243C2F15003D3723 /* Debug */,
+				AB937061243C2F15003D3723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB937022243C2F14003D3723 /* Project object */;
+}
