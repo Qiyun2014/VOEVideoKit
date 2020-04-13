@@ -25,9 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 // AVAssetWriter provides services for writing media data to a new file,
 @property (strong, nonatomic) AVAssetWriter *assetWriter;
 
+
 // Defines an interface for appending either new media samples or references to existing media samples packaged as CMSampleBuffer objects to a single track of the output file of an AVAssetWriter.
 @property (strong, nonatomic) AVAssetWriterInput *videoAssetWriterInput;
 @property (strong, nonatomic) AVAssetWriterInput *audioAssetWriterInput;
+
 
 // Defines an interface for appending video samples packaged as CVPixelBuffer objects to a single AVAssetWriterInput object.
 @property (strong, nonatomic) AVAssetWriterInputPixelBufferAdaptor  *inputPixelBufferAdaptor;

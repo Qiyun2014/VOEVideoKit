@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic, getter=getVideoTrack) AVAssetTrack *videoTrack;
 @property (readonly, nonatomic, getter=getAudioTrack) AVAssetTrack *audioTrack;
 
-
+// Returns a series of UIImages for an asset at or near the specified times.
 - (void)thumbnailImageOfNumber:(NSInteger)number imageSize:(CGSize)size completionHandle:(void (^)(NSArray *))handle;
 
 @end
