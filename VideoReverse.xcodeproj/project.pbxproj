@@ -20,7 +20,6 @@
 		AB937065243C2F75003D3723 /* VOEVideoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937064243C2F75003D3723 /* VOEVideoReader.m */; };
 		AB937068243C2F8D003D3723 /* VOEVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937067243C2F8D003D3723 /* VOEVideo.m */; };
 		AB93706B243C2FB9003D3723 /* VOEVideWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93706A243C2FB9003D3723 /* VOEVideWriter.m */; };
-		AB93706E243C441E003D3723 /* VOEFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93706D243C441E003D3723 /* VOEFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +66,6 @@
 		AB937067243C2F8D003D3723 /* VOEVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEVideo.m; sourceTree = "<group>"; };
 		AB937069243C2FB9003D3723 /* VOEVideWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEVideWriter.h; sourceTree = "<group>"; };
 		AB93706A243C2FB9003D3723 /* VOEVideWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEVideWriter.m; sourceTree = "<group>"; };
-		AB93706C243C441E003D3723 /* VOEFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEFrame.h; sourceTree = "<group>"; };
-		AB93706D243C441E003D3723 /* VOEFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEFrame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +158,6 @@
 				AB937064243C2F75003D3723 /* VOEVideoReader.m */,
 				AB937066243C2F8D003D3723 /* VOEVideo.h */,
 				AB937067243C2F8D003D3723 /* VOEVideo.m */,
-				AB93706C243C441E003D3723 /* VOEFrame.h */,
-				AB93706D243C441E003D3723 /* VOEFrame.m */,
 				AB937069243C2FB9003D3723 /* VOEVideWriter.h */,
 				AB93706A243C2FB9003D3723 /* VOEVideWriter.m */,
 				AB39DDB5244023F700FDD7CD /* VOEKit.h */,
@@ -303,7 +298,6 @@
 			files = (
 				AB937035243C2F14003D3723 /* ViewController.m in Sources */,
 				AB93702F243C2F14003D3723 /* AppDelegate.m in Sources */,
-				AB93706E243C441E003D3723 /* VOEFrame.m in Sources */,
 				AB937040243C2F15003D3723 /* main.m in Sources */,
 				AB937032243C2F14003D3723 /* SceneDelegate.m in Sources */,
 				AB93706B243C2FB9003D3723 /* VOEVideWriter.m in Sources */,

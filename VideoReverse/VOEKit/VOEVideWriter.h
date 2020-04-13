@@ -46,9 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
 // Cancel operation
 - (void)cancelWriter;
 
+
 // Prepare writer and ready for more data from block
 - (void)requestForMoreMediaOfType:(AVMediaType)mediaType didWriteOnCompletionBlock:(void (^) (AVMediaType mediaType, CMSampleBufferRef sampleBuffer))finished;
-
 
 // Start writer sample buffer to file
 - (BOOL)writerInputSampleBuffer:(CMSampleBufferRef)sampleBuffer mediaType:(AVMediaType)mediaType;

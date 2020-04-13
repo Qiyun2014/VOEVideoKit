@@ -228,19 +228,26 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
     [[self getWriterInputForMediaType:mediaType] requestMediaDataWhenReadyOnQueue:[self writeQueueWithMediaType:mediaType]
                                                                        usingBlock:^{
         __strong_object__(weakself);
-        while ([self getWriterInputForMediaType:mediaType].isReadyForMoreMediaData && self.videoReader.assetReader.status == AVAssetReaderStatusReading) {
+        while ([strongForweakself getWriterInputForMediaType:mediaType].isReadyForMoreMediaData &&
+               strongForweakself.videoReader.assetReader.status == AVAssetReaderStatusReading)
+        {
             CMSampleBufferRef sampleBuffer = [[strongForweakself getReaderOutputForMediaType:mediaType] copyNextSampleBuffer];
             if (sampleBuffer != NULL) {
-                BOOL success = [[self getWriterInputForMediaType:mediaType] appendSampleBuffer:sampleBuffer];
+                BOOL success = [[strongForweakself getWriterInputForMediaType:mediaType] appendSampleBuffer:sampleBuffer];
                 if (!success) {
                     NSLog(@"drop sample buffer, error is %@", self.assetWriter.error);
                 } else {
+                    if (strongForweakself.videoReader.delegate) {
+                        [strongForweakself.videoReader.delegate videoReader:strongForweakself.videoReader
+                                                                  mediaType:mediaType
+                                                      didOutputSampleBuffer:sampleBuffer];
+                    }
                     NSLog(@"write sample success....  %@", (mediaType == AVMediaTypeAudio) ? @"Audio" : @"video");
                 }
                 CFRelease(sampleBuffer);
                 sampleBuffer = NULL;
             } else {
-                [[self getWriterInputForMediaType:mediaType] markAsFinished];
+                [[strongForweakself getWriterInputForMediaType:mediaType] markAsFinished];
                 if (completionHandler) completionHandler();
                 break;
             }

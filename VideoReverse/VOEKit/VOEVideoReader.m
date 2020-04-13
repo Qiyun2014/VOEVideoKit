@@ -318,12 +318,18 @@ VOEVideoReader (VOEVideoAssetReader)
                         if (self.decodeCallback) {
                             self.decodeCallback(videoSampleBuffer, AVMediaTypeVideo);
                         }
+                        if (self.delegate) {
+                            [self.delegate videoReader:self mediaType:AVMediaTypeVideo didOutputSampleBuffer:videoSampleBuffer];
+                        }
                         CFRelease(videoSampleBuffer);
                     }
                     if (audioSampleBuffer) {
                         NSLog(@"decode audio sample buffer %d", frameCount ++);
                         if (self.decodeCallback) {
-                            self.decodeCallback(audioSampleBuffer, AVMediaTypeVideo);
+                            self.decodeCallback(audioSampleBuffer, AVMediaTypeAudio);
+                        }
+                        if (self.delegate) {
+                            [self.delegate videoReader:self mediaType:AVMediaTypeAudio didOutputSampleBuffer:audioSampleBuffer];
                         }
                         CFRelease(audioSampleBuffer);
                     }

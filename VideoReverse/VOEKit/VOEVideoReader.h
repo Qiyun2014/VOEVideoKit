@@ -14,10 +14,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class VOEVideoReader;
+@protocol VOESampleBufferDelegate <NSObject>
+
+@optional
+- (void)videoReader:(VOEVideoReader *)videoReader mediaType:(AVMediaType)mediaType didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+
+@end
+
 @interface
 VOEVideoReader : NSObject
 
 - (id)initWithVideo:(VOEVideo *)video;
+
+// Media output of delegate, get real time video and audio data
+@property (weak, nonatomic) id<VOESampleBufferDelegate> delegate;
 
 // Current loading the video handle
 @property (strong, nonatomic, readonly, getter=getVideoHandle) VOEVideo *videoHandle;
