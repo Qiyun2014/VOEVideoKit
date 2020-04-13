@@ -144,9 +144,7 @@ void (^VOEDecodeCallback) (CMSampleBufferRef sampleBuffer, AVMediaType mediaType
                 AVAssetTrack *videoTrack = videoTracks.firstObject;
                 [videoTrack loadValuesAsynchronouslyForKeys:@[@"preferredTransform"] completionHandler:^{
                     if ([videoTrack statusOfValueForKey:@"preferredTransform" error:nil] == AVKeyValueStatusLoaded) {
-                        CGAffineTransform preferredTransform = [videoTrack preferredTransform];
-                        
-                        
+                        // CGAffineTransform preferredTransform = [videoTrack preferredTransform];
                         dispatch_async(dispatch_get_main_queue(), ^{
                             __strong_object__(weakself);
                             if (![playerItem.outputs containsObject:strongForweakself.videoOutput]) {
@@ -303,39 +301,39 @@ VOEVideoReader (VOEVideoAssetReader)
     [self addObserver:self forKeyPath:kObserverReaderOutputStatus options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
     // self.assetReader.timeRange = CMTimeRangeMake(CMTimeMake(200, 10), CMTimeMake(100, 100));
     int frameCount = 0;
-    // preset
-    if (prepareBlock) {
-        prepareBlock();
-    }
-    
     if ([self.assetReader startReading]) {
-        const dispatch_semaphore_t transcode = dispatch_semaphore_create(0);
-        while (self.assetReader.status == AVAssetReaderStatusReading) {
-            const CMSampleBufferRef videoSampleBuffer = self.videoReaderOutput.copyNextSampleBuffer;
-            const CMSampleBufferRef audioSampleBuffer = self.audioReaderOutput.copyNextSampleBuffer;
-            if (videoSampleBuffer || audioSampleBuffer) {
-                // Do something
-                if (videoSampleBuffer) {
-                    NSLog(@"decode video sample buffer %d", frameCount ++);
-                    // CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(videoSampleBuffer);
-                    if (self.decodeCallback) {
-                        self.decodeCallback(videoSampleBuffer, AVMediaTypeVideo);
+        // preset
+        if (prepareBlock) {
+            prepareBlock();
+        } else {
+            const dispatch_semaphore_t transcode = dispatch_semaphore_create(0);
+            while (self.assetReader.status == AVAssetReaderStatusReading) {
+                const CMSampleBufferRef videoSampleBuffer = self.videoReaderOutput.copyNextSampleBuffer;
+                const CMSampleBufferRef audioSampleBuffer = self.audioReaderOutput.copyNextSampleBuffer;
+                if (videoSampleBuffer || audioSampleBuffer) {
+                    // Do something
+                    if (videoSampleBuffer) {
+                        NSLog(@"decode video sample buffer %d", frameCount ++);
+                        // CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(videoSampleBuffer);
+                        if (self.decodeCallback) {
+                            self.decodeCallback(videoSampleBuffer, AVMediaTypeVideo);
+                        }
+                        CFRelease(videoSampleBuffer);
                     }
-                    CFRelease(videoSampleBuffer);
-                }
-                if (audioSampleBuffer) {
-                    NSLog(@"decode audio sample buffer %d", frameCount ++);
-                    if (self.decodeCallback) {
-                        self.decodeCallback(audioSampleBuffer, AVMediaTypeVideo);
+                    if (audioSampleBuffer) {
+                        NSLog(@"decode audio sample buffer %d", frameCount ++);
+                        if (self.decodeCallback) {
+                            self.decodeCallback(audioSampleBuffer, AVMediaTypeVideo);
+                        }
+                        CFRelease(audioSampleBuffer);
                     }
-                    CFRelease(audioSampleBuffer);
-                }
-             } else {
-                dispatch_semaphore_signal(transcode);
-             }
+                 } else {
+                    dispatch_semaphore_signal(transcode);
+                 }
+            }
+            NSLog(@"decode finished ... ");
+            dispatch_semaphore_wait(transcode, DISPATCH_TIME_FOREVER);
         }
-        NSLog(@"decode finished ... ");
-        dispatch_semaphore_wait(transcode, DISPATCH_TIME_FOREVER);
         return true;
     } else {
         NSLog(@"assetReader failed, status is = %ld, error = %@", (long)self.assetReader.status, self.assetReader.error);
@@ -355,6 +353,7 @@ VOEVideoReader (VOEVideoAssetReader)
     
     NSError *outError;
     self.assetReader = [AVAssetReader assetReaderWithAsset:self.mVideo.getAsset error:&outError];
+
     /**
      Always check that the asset reader returned to you is non-nil to ensure that the asset reader was initialized successfully.
      Otherwise, the error parameter (outError in the previous example) will contain the relevant error information.

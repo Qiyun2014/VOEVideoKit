@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "VOEKit.h"
+#import "VOEVideoReader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VOEVideWriter : NSObject
 
 - (id)initWithURL:(NSURL *)outputUrl;
+
 
 // Preset write media of bitrate and pixel size
 @property (assign, nonatomic) NSInteger biterate;
@@ -30,17 +32,27 @@ NS_ASSUME_NONNULL_BEGIN
 // Defines an interface for appending video samples packaged as CVPixelBuffer objects to a single AVAssetWriterInput object.
 @property (strong, nonatomic) AVAssetWriterInputPixelBufferAdaptor  *inputPixelBufferAdaptor;
 
+// Reading sample buffer with output, support format is mp4 or quick time movie, include audio and video
+@property (strong, nonatomic) VOEVideoReader *videoReader;
+
+
 // Create file to document
 + (NSString *)createTempFileWithFormat:(NSString *)format;
+
 
 // Start writer media data
 - (void)startWriter;
 
+// Cancel operation
+- (void)cancelWriter;
+
 // Prepare writer and ready for more data from block
 - (void)requestForMoreMediaOfType:(AVMediaType)mediaType didWriteOnCompletionBlock:(void (^) (AVMediaType mediaType, CMSampleBufferRef sampleBuffer))finished;
 
+
 // Start writer sample buffer to file
 - (BOOL)writerInputSampleBuffer:(CMSampleBufferRef)sampleBuffer mediaType:(AVMediaType)mediaType;
+
 
 @end
 

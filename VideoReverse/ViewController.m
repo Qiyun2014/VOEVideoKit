@@ -26,17 +26,14 @@
     
     
     NSString *outputFile = [VOEVideWriter createTempFileWithFormat:@"mp4"];
+    NSLog(@"file = %@", outputFile);
     VOEVideWriter *writerHandle = [[VOEVideWriter alloc] initWithURL:[NSURL fileURLWithPath:outputFile]];
     writerHandle.naturesize = videoReader.getVideoHandle.naturalSize;
+    writerHandle.videoReader = videoReader;
     
-    
-    [videoReader readerMediaWithPrepareBlock:^{
+    [videoReader startDecompressionVideoWithPrepareBlock:^{
         [writerHandle startWriter];
-    } completionHandler:^(CMSampleBufferRef  _Nonnull sampleBuffer, AVMediaType  _Nonnull mediaType) {
-        [writerHandle writerInputSampleBuffer:sampleBuffer mediaType:mediaType];
     }];
-    
-    
 
 }
 

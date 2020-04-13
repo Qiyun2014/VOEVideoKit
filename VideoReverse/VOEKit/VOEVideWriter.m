@@ -11,7 +11,10 @@
 NSString *kObserverWriterOutputStatus = @"assetWriter.status";
 typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sampleBuffer);
 
-@interface VOEVideWriter ()
+@interface VOEVideWriter () {
+    @private
+    dispatch_queue_t        serializationQueue;
+}
 
 @property (copy, nonatomic) NSURL *outputURL;
 @property (copy, nonatomic) WriterReadyOnBlock writeReadyOnBlock;
@@ -26,10 +29,20 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
 - (id)initWithURL:(NSURL *)outputUrl {
     if (self = [super init]) {
         self.outputURL = outputUrl;
+        
+        NSString *serializationQueueDescription = [NSString stringWithFormat:@"%@ serialization queue", self];
+        serializationQueue = dispatch_queue_create([serializationQueueDescription UTF8String], NULL);
     }
     return self;
 }
 
+- (void)dealloc {
+    _assetWriter = nil;
+    _videoReader = nil;
+    if (serializationQueue) {
+        serializationQueue = NULL;
+    }
+}
 
 #pragma mark    -   get method
 
@@ -90,17 +103,20 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
 - (AVAssetWriter *)assetWriter {
     if (!_assetWriter) {
         NSError *error;
-        _assetWriter = [AVAssetWriter assetWriterWithURL:self.outputURL fileType:AVFileTypeMPEG4 error:&error];
+        _assetWriter = [AVAssetWriter assetWriterWithURL:self.outputURL fileType:AVFileTypeQuickTimeMovie error:&error];
+        if (error) {
+            NSLog(@"create export file faile = %@", error);
+        }
         _assetWriter.shouldOptimizeForNetworkUse = YES;
         // Support hls fragment and set interval time
         // _assetWriter.movieFragmentInterval = CMTimeMakeWithSeconds(10.0, 1000);
         // Support quick playable
         _assetWriter.shouldOptimizeForNetworkUse = YES;
-        if ([_assetWriter canAddInput:self.videoAssetWriterInput] && self.inputPixelBufferAdaptor.pixelBufferPool != NULL) {
+        if ([_assetWriter canAddInput:self.videoAssetWriterInput]) {
             [_assetWriter addInput:self.videoAssetWriterInput];
         }
         if ([_assetWriter canAddInput:self.audioAssetWriterInput]) {
-            // [_assetWriter addInput:self.audioAssetWriterInput];
+            [_assetWriter addInput:self.audioAssetWriterInput];
         }
         [self addObserver:self forKeyPath:kObserverWriterOutputStatus options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
     }
@@ -133,6 +149,11 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
 }
 
 
+- (AVAssetReaderOutput *)getReaderOutputForMediaType:(AVMediaType)mediaType {
+    return (mediaType == AVMediaTypeVideo) ? self.videoReader.videoReaderOutput : self.videoReader.audioReaderOutput;
+}
+
+
 - (AVAssetWriterInputPixelBufferAdaptor *)inputPixelBufferAdaptor {
     if (!_inputPixelBufferAdaptor) {
         _inputPixelBufferAdaptor = [AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInput:self.videoAssetWriterInput
@@ -142,17 +163,89 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
 }
 
 
+#pragma mark    -   set method
+
+- (void)setVideoReader:(VOEVideoReader *)videoReader {
+    
+    _videoReader = videoReader;
+}
+
+
 #pragma mark    -   private method
 
 - (void)startWriter {
     // Decide to status is writing, or reset assetWrite
     if (self.assetWriter.status != AVAssetWriterStatusWriting) {
         if ([self.assetWriter startWriting]) {
-            [self.assetWriter startSessionAtSourceTime:kCMTimeZero];
+            [self.assetWriter startSessionAtSourceTime:CMTimeMake(1, 600)];
+            [self startReadingAndWritingSampleBuffer];
         } else {
             NSLog(@"Start writing error = %@", self.assetWriter.error);
         }
     }
+}
+
+
+- (void)cancelWriter {
+    dispatch_async(serializationQueue, ^{
+        if (self.assetWriter.status == AVAssetWriterStatusWriting) {
+            [self.assetWriter cancelWriting];
+        }
+        if (self.videoReader.assetReader.status == AVAssetReaderStatusReading) {
+            [self.videoReader.assetReader cancelReading];
+        }
+    });
+}
+
+
+- (void)startReadingAndWritingSampleBuffer {
+    dispatch_group_t dispatchGroup = dispatch_group_create();
+    // For Video
+    if (self.videoReader.videoReaderOutput) {
+        dispatch_group_enter(dispatchGroup);
+        [self writtingSampleBufferForMediaType:AVMediaTypeVideo completionHandler:^{
+            dispatch_group_leave(dispatchGroup);
+        }];
+    }
+    // For Audio
+    if (self.videoReader.audioReaderOutput) {
+        dispatch_group_enter(dispatchGroup);
+        [self writtingSampleBufferForMediaType:AVMediaTypeAudio completionHandler:^{
+            dispatch_group_leave(dispatchGroup);
+        }];
+    }
+    // Complete
+    dispatch_group_notify(dispatchGroup, serializationQueue, ^{
+        [self.assetWriter finishWritingWithCompletionHandler:^{
+            NSLog(@"Write sample buffer of finished ...");
+        }];
+    });
+}
+
+
+- (void)writtingSampleBufferForMediaType:(AVMediaType)mediaType completionHandler:(void (^) (void))completionHandler {
+    __weak_object__(self);
+    [[self getWriterInputForMediaType:mediaType] requestMediaDataWhenReadyOnQueue:[self writeQueueWithMediaType:mediaType]
+                                                                       usingBlock:^{
+        __strong_object__(weakself);
+        while ([self getWriterInputForMediaType:mediaType].isReadyForMoreMediaData && self.videoReader.assetReader.status == AVAssetReaderStatusReading) {
+            CMSampleBufferRef sampleBuffer = [[strongForweakself getReaderOutputForMediaType:mediaType] copyNextSampleBuffer];
+            if (sampleBuffer != NULL) {
+                BOOL success = [[self getWriterInputForMediaType:mediaType] appendSampleBuffer:sampleBuffer];
+                if (!success) {
+                    NSLog(@"drop sample buffer, error is %@", self.assetWriter.error);
+                } else {
+                    NSLog(@"write sample success....  %@", (mediaType == AVMediaTypeAudio) ? @"Audio" : @"video");
+                }
+                CFRelease(sampleBuffer);
+                sampleBuffer = NULL;
+            } else {
+                [[self getWriterInputForMediaType:mediaType] markAsFinished];
+                if (completionHandler) completionHandler();
+                break;
+            }
+        }
+    }];
 }
 
 
@@ -165,6 +258,9 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
     NSString *fileName = [NSString stringWithFormat:@"%ld-%@.%@", random() % 10^5,dateTime, format];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *file = [paths.firstObject stringByAppendingPathComponent:fileName];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:file]) {
+        [[NSFileManager defaultManager] removeItemAtPath:file error:nil];
+    }
     return file;
 }
 
