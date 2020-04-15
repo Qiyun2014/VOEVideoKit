@@ -620,6 +620,7 @@
 			baseConfigurationReference = 107377E4DB3D8D1A0515B88A /* Pods-VideoReverse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58T2GZC329;
 				ENABLE_BITCODE = NO;
@@ -628,8 +629,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -639,6 +641,7 @@
 			baseConfigurationReference = 0E9FA44CA3B763DBEBAAB009 /* Pods-VideoReverse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58T2GZC329;
 				ENABLE_BITCODE = NO;
@@ -647,8 +650,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove.VideoReverse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yryz.forlove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
