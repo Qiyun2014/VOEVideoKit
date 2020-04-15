@@ -218,6 +218,9 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
     dispatch_group_notify(dispatchGroup, serializationQueue, ^{
         [self.assetWriter finishWritingWithCompletionHandler:^{
             NSLog(@"Write sample buffer of finished ...");
+            if (self.delegate) {
+                [self.delegate videoWriter:self didFinishedWithOutputURL:self.outputURL];
+            }
         }];
     });
 }
@@ -229,8 +232,7 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
                                                                        usingBlock:^{
         __strong_object__(weakself);
         while ([strongForweakself getWriterInputForMediaType:mediaType].isReadyForMoreMediaData &&
-               strongForweakself.videoReader.assetReader.status == AVAssetReaderStatusReading)
-        {
+               strongForweakself.videoReader.assetReader.status == AVAssetReaderStatusReading) {
             CMSampleBufferRef sampleBuffer = [[strongForweakself getReaderOutputForMediaType:mediaType] copyNextSampleBuffer];
             if (sampleBuffer != NULL) {
                 BOOL success = [[strongForweakself getWriterInputForMediaType:mediaType] appendSampleBuffer:sampleBuffer];
@@ -262,7 +264,7 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd-HH-mm-ss"];
     NSString *dateTime = [formatter stringFromDate:[NSDate date]];
-    NSString *fileName = [NSString stringWithFormat:@"%ld-%@.%@", random() % 10^5,dateTime, format];
+    NSString *fileName = [NSString stringWithFormat:@"%ld-%@.%@", random() % 10^5, dateTime, format];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *file = [paths.firstObject stringByAppendingPathComponent:fileName];
     if ([[NSFileManager defaultManager] fileExistsAtPath:file]) {

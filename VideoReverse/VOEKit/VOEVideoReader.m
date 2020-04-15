@@ -64,6 +64,12 @@ void (^VOEDecodeCallback) (CMSampleBufferRef sampleBuffer, AVMediaType mediaType
 
 - (void)dealloc {
     
+    [_displayLink invalidate];
+    _displayLink = nil;
+    _decodeCallback = NULL;
+    _mVideo = nil;
+    _videoOutput = nil;
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
@@ -128,7 +134,6 @@ void (^VOEDecodeCallback) (CMSampleBufferRef sampleBuffer, AVMediaType mediaType
 
 
 - (void)preparePlayback {
-    
     __weak_object__(self);
     [[[self.mPlayer currentItem] outputs] enumerateObjectsUsingBlock:^(AVPlayerItemOutput * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         __strong_object__(weakself);

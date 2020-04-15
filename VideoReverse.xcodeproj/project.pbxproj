@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61CDAEB0D31A9D1812CDA9CB /* Pods_VideoReverse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC15849CCDEFFF0972227AC /* Pods_VideoReverse.framework */; };
 		AB924AB0243ECBEA00F8761D /* IMG_0007.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AB924AAF243ECBEA00F8761D /* IMG_0007.mp4 */; };
 		AB93702F243C2F14003D3723 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93702E243C2F14003D3723 /* AppDelegate.m */; };
 		AB937032243C2F14003D3723 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937031243C2F14003D3723 /* SceneDelegate.m */; };
@@ -20,6 +21,8 @@
 		AB937065243C2F75003D3723 /* VOEVideoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937064243C2F75003D3723 /* VOEVideoReader.m */; };
 		AB937068243C2F8D003D3723 /* VOEVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = AB937067243C2F8D003D3723 /* VOEVideo.m */; };
 		AB93706B243C2FB9003D3723 /* VOEVideWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB93706A243C2FB9003D3723 /* VOEVideWriter.m */; };
+		D41A335A46E3074B34010161 /* Pods_VideoReverse_VideoReverseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFAC94104C42225484779A0 /* Pods_VideoReverse_VideoReverseUITests.framework */; };
+		FBEF83DEBB4996E5DDE5A95F /* Pods_VideoReverseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E13EA79169D19ACBB45EC9 /* Pods_VideoReverseTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DAA2BE7D45447AF7FA1C628 /* Pods-VideoReverse-VideoReverseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoReverse-VideoReverseUITests.debug.xcconfig"; path = "Target Support Files/Pods-VideoReverse-VideoReverseUITests/Pods-VideoReverse-VideoReverseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E9FA44CA3B763DBEBAAB009 /* Pods-VideoReverse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoReverse.release.xcconfig"; path = "Target Support Files/Pods-VideoReverse/Pods-VideoReverse.release.xcconfig"; sourceTree = "<group>"; };
+		107377E4DB3D8D1A0515B88A /* Pods-VideoReverse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoReverse.debug.xcconfig"; path = "Target Support Files/Pods-VideoReverse/Pods-VideoReverse.debug.xcconfig"; sourceTree = "<group>"; };
+		60E95D7600601ED3FF76BD68 /* Pods-VideoReverseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoReverseTests.release.xcconfig"; path = "Target Support Files/Pods-VideoReverseTests/Pods-VideoReverseTests.release.xcconfig"; sourceTree = "<group>"; };
+		6B037409A2E033E8D4B677E4 /* Pods-VideoReverse-VideoReverseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoReverse-VideoReverseUITests.release.xcconfig"; path = "Target Support Files/Pods-VideoReverse-VideoReverseUITests/Pods-VideoReverse-VideoReverseUITests.release.xcconfig"; sourceTree = "<group>"; };
+		88E13EA79169D19ACBB45EC9 /* Pods_VideoReverseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoReverseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB39DDB5244023F700FDD7CD /* VOEKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEKit.h; sourceTree = "<group>"; };
 		AB924AAF243ECBEA00F8761D /* IMG_0007.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0007.mp4; sourceTree = "<group>"; };
 		AB93702A243C2F14003D3723 /* VideoReverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoReverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +75,9 @@
 		AB937067243C2F8D003D3723 /* VOEVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEVideo.m; sourceTree = "<group>"; };
 		AB937069243C2FB9003D3723 /* VOEVideWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOEVideWriter.h; sourceTree = "<group>"; };
 		AB93706A243C2FB9003D3723 /* VOEVideWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOEVideWriter.m; sourceTree = "<group>"; };
+		DBFAC94104C42225484779A0 /* Pods_VideoReverse_VideoReverseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoReverse_VideoReverseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC15849CCDEFFF0972227AC /* Pods_VideoReverse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoReverse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F651D3B8777008F36D6F7A71 /* Pods-VideoReverseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoReverseTests.debug.xcconfig"; path = "Target Support Files/Pods-VideoReverseTests/Pods-VideoReverseTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CDAEB0D31A9D1812CDA9CB /* Pods_VideoReverse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBEF83DEBB4996E5DDE5A95F /* Pods_VideoReverseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,12 +101,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41A335A46E3074B34010161 /* Pods_VideoReverse_VideoReverseUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0204EF28F6E6F6541C85DA66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				107377E4DB3D8D1A0515B88A /* Pods-VideoReverse.debug.xcconfig */,
+				0E9FA44CA3B763DBEBAAB009 /* Pods-VideoReverse.release.xcconfig */,
+				0DAA2BE7D45447AF7FA1C628 /* Pods-VideoReverse-VideoReverseUITests.debug.xcconfig */,
+				6B037409A2E033E8D4B677E4 /* Pods-VideoReverse-VideoReverseUITests.release.xcconfig */,
+				F651D3B8777008F36D6F7A71 /* Pods-VideoReverseTests.debug.xcconfig */,
+				60E95D7600601ED3FF76BD68 /* Pods-VideoReverseTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		11F6E90F8DEC30D342DFCFBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECC15849CCDEFFF0972227AC /* Pods_VideoReverse.framework */,
+				DBFAC94104C42225484779A0 /* Pods_VideoReverse_VideoReverseUITests.framework */,
+				88E13EA79169D19ACBB45EC9 /* Pods_VideoReverseTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB937021243C2F14003D3723 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +139,8 @@
 				AB937048243C2F15003D3723 /* VideoReverseTests */,
 				AB937053243C2F15003D3723 /* VideoReverseUITests */,
 				AB93702B243C2F14003D3723 /* Products */,
+				0204EF28F6E6F6541C85DA66 /* Pods */,
+				11F6E90F8DEC30D342DFCFBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB937059243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverse" */;
 			buildPhases = (
+				C8BA08ECAE2FBC83CEACB837 /* [CP] Check Pods Manifest.lock */,
 				AB937026243C2F14003D3723 /* Sources */,
 				AB937027243C2F14003D3723 /* Frameworks */,
 				AB937028243C2F14003D3723 /* Resources */,
+				1AB1D687D1BA78345E9F53B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB93705C243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverseTests" */;
 			buildPhases = (
+				325B5127FF5D2E1295D7AC5A /* [CP] Check Pods Manifest.lock */,
 				AB937041243C2F15003D3723 /* Sources */,
 				AB937042243C2F15003D3723 /* Frameworks */,
 				AB937043243C2F15003D3723 /* Resources */,
@@ -207,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB93705F243C2F15003D3723 /* Build configuration list for PBXNativeTarget "VideoReverseUITests" */;
 			buildPhases = (
+				0DB4BB59EE6CF3118A4BBFD6 /* [CP] Check Pods Manifest.lock */,
 				AB93704C243C2F15003D3723 /* Sources */,
 				AB93704D243C2F15003D3723 /* Frameworks */,
 				AB93704E243C2F15003D3723 /* Resources */,
+				35034CBA140B57D7A959A3D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,6 +336,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DB4BB59EE6CF3118A4BBFD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoReverse-VideoReverseUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AB1D687D1BA78345E9F53B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoReverse/Pods-VideoReverse-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoReverse/Pods-VideoReverse-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoReverse/Pods-VideoReverse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		325B5127FF5D2E1295D7AC5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoReverseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35034CBA140B57D7A959A3D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoReverse-VideoReverseUITests/Pods-VideoReverse-VideoReverseUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoReverse-VideoReverseUITests/Pods-VideoReverse-VideoReverseUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoReverse-VideoReverseUITests/Pods-VideoReverse-VideoReverseUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8BA08ECAE2FBC83CEACB837 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoReverse-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB937026243C2F14003D3723 /* Sources */ = {
@@ -469,6 +618,7 @@
 		};
 		AB93705A243C2F15003D3723 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107377E4DB3D8D1A0515B88A /* Pods-VideoReverse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +636,7 @@
 		};
 		AB93705B243C2F15003D3723 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E9FA44CA3B763DBEBAAB009 /* Pods-VideoReverse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +654,7 @@
 		};
 		AB93705D243C2F15003D3723 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F651D3B8777008F36D6F7A71 /* Pods-VideoReverseTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +675,7 @@
 		};
 		AB93705E243C2F15003D3723 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60E95D7600601ED3FF76BD68 /* Pods-VideoReverseTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +696,7 @@
 		};
 		AB937060243C2F15003D3723 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DAA2BE7D45447AF7FA1C628 /* Pods-VideoReverse-VideoReverseUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VLZ8G467JP;
@@ -561,6 +715,7 @@
 		};
 		AB937061243C2F15003D3723 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B037409A2E033E8D4B677E4 /* Pods-VideoReverse-VideoReverseUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VLZ8G467JP;

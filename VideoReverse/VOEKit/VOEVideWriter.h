@@ -13,6 +13,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class VOEVideWriter;
+@protocol VOEWriterStatusDelegate <NSObject>
+
+- (void)videoWriter:(VOEVideWriter *)videoWriter didFinishedWithOutputURL:(NSURL *)URL;
+
+@end
+
+
 @interface VOEVideWriter : NSObject
 
 - (id)initWithURL:(NSURL *)outputUrl;
@@ -37,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 // Reading sample buffer with output, support format is mp4 or quick time movie, include audio and video
 @property (strong, nonatomic) VOEVideoReader *videoReader;
 
+// Writer for delegate, did listen write events
+@property (weak, nonatomic) id<VOEWriterStatusDelegate> delegate;
 
 // Create file to document
 + (NSString *)createTempFileWithFormat:(NSString *)format;

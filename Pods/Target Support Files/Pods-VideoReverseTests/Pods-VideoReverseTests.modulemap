@@ -1,0 +1,6 @@
+framework module Pods_VideoReverseTests {
+  umbrella header "Pods-VideoReverseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

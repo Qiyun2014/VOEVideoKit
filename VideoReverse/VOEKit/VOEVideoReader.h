@@ -33,6 +33,10 @@ VOEVideoReader : NSObject
 // Current loading the video handle
 @property (strong, nonatomic, readonly, getter=getVideoHandle) VOEVideo *videoHandle;
 
+// Reverse an media to new file and playable
+@property (assign, nonatomic) BOOL reverse;
+
+// Reading sample buffer data from AVAsset
 - (BOOL)readerMediaWithPrepareBlock:(void (^) (void))prepareBlock completionHandler:(void (^) (CMSampleBufferRef sampleBuffer, AVMediaType mediaType))handler;
 
 @end
@@ -40,6 +44,7 @@ VOEVideoReader : NSObject
 
 @interface
 VOEVideoReader (VOEVideoAssetReader)
+
 
 // AVAssetReader provides services for obtaining media data from an asset.
 @property (strong, nonatomic) AVAssetReader *assetReader;
@@ -51,6 +56,7 @@ VOEVideoReader (VOEVideoAssetReader)
 // Output setting of decode propertis
 @property (copy, nonatomic, readonly, getter=getVideoOutputSetting) NSDictionary    *videoOutputSetting;
 @property (copy, nonatomic, readonly, getter=getAudioOutputSetting) NSDictionary    *audioOutputSetting;
+
 
 // Start decompression video to sample buffer of audio or video
 - (BOOL)startDecompressionVideoWithPrepareBlock:(void (^) (void))prepareBlock;

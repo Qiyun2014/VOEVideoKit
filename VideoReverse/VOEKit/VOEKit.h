@@ -13,6 +13,10 @@
 #define __strong_object__(obj) __strong typeof(obj) strongFor##obj = obj;
 
 
+#import "VOEVideoReader.h"
+#import "VOEVideWriter.h"
+#import "VOEVideo.h"
+
 // A picture size (kb) = width * height * bit / 8 / 1024
 
 
