@@ -1,5 +1,5 @@
 //
-//  VOEVideWriter.h
+//  VOEVideoWriter.h
 //  VideoReverse
 //
 //  Created by qiyun on 2020/4/7.
@@ -13,15 +13,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class VOEVideWriter;
+@class VOEVideoWriter;
 @protocol VOEWriterStatusDelegate <NSObject>
 
-- (void)videoWriter:(VOEVideWriter *)videoWriter didFinishedWithOutputURL:(NSURL *)URL;
+- (void)videoWriter:(VOEVideoWriter *)videoWriter didFinishedWithOutputURL:(NSURL *)URL;
 
 @end
 
-
-@interface VOEVideWriter : NSObject
+@class VOEVideoReader;
+@interface VOEVideoWriter : NSObject
 
 - (id)initWithURL:(NSURL *)outputUrl;
 
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) AVAssetWriterInputPixelBufferAdaptor  *inputPixelBufferAdaptor;
 
 // Reading sample buffer with output, support format is mp4 or quick time movie, include audio and video
-@property (strong, nonatomic) VOEVideoReader *videoReader;
+@property (nonnull, strong, nonatomic) VOEVideoReader *videoReader;
 
 // Writer for delegate, did listen write events
 @property (weak, nonatomic) id<VOEWriterStatusDelegate> delegate;

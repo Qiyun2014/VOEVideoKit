@@ -14,7 +14,7 @@
 
 
 #import "VOEVideoReader.h"
-#import "VOEVideWriter.h"
+#import "VOEVideoWriter.h"
 #import "VOEVideo.h"
 
 // A picture size (kb) = width * height * bit / 8 / 1024

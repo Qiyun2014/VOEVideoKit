@@ -1,17 +1,17 @@
 //
-//  VOEVideWriter.m
+//  VOEVideoWriter.m
 //  VideoReverse
 //
 //  Created by qiyun on 2020/4/7.
 //  Copyright © 2020 qiyun. All rights reserved.
 //
 
-#import "VOEVideWriter.h"
+#import "VOEVideoWriter.h"
 
 NSString *kObserverWriterOutputStatus = @"assetWriter.status";
 typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sampleBuffer);
 
-@interface VOEVideWriter () {
+@interface VOEVideoWriter () {
     @private
     dispatch_queue_t        serializationQueue;
 }
@@ -21,7 +21,7 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
 
 @end
 
-@implementation VOEVideWriter {
+@implementation VOEVideoWriter {
     dispatch_queue_t    _videoReadyForMediaQueue;
     dispatch_queue_t    _audioReadyForMediaQueue;
 }
@@ -164,11 +164,6 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
 
 
 #pragma mark    -   set method
-
-- (void)setVideoReader:(VOEVideoReader *)videoReader {
-    
-    _videoReader = videoReader;
-}
 
 
 #pragma mark    -   private method

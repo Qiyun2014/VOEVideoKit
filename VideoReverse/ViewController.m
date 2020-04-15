@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "VOEVideoReader.h"
-#import "VOEVideWriter.h"
+#import "VOEVideoWriter.h"
 
 @interface ViewController ()
 
@@ -25,9 +25,9 @@
     VOEVideoReader *videoReader = [[VOEVideoReader alloc] initWithVideo:videoHandle];
     
     
-    NSString *outputFile = [VOEVideWriter createTempFileWithFormat:@"mp4"];
+    NSString *outputFile = [VOEVideoWriter createTempFileWithFormat:@"mp4"];
     NSLog(@"file = %@", outputFile);
-    VOEVideWriter *writerHandle = [[VOEVideWriter alloc] initWithURL:[NSURL fileURLWithPath:outputFile]];
+    VOEVideoWriter *writerHandle = [[VOEVideoWriter alloc] initWithURL:[NSURL fileURLWithPath:outputFile]];
     writerHandle.naturesize = videoReader.getVideoHandle.naturalSize;
     writerHandle.videoReader = videoReader;
     
