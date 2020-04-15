@@ -339,11 +339,7 @@ typedef void (^WriterReadyOnBlock) (AVMediaType mediaType, CMSampleBufferRef sam
                 
             case AVAssetWriterStatusCompleted:
                 NSLog(@"writer video of status is completed ...");
-                [self.assetWriter endSessionAtSourceTime:kCMTimeZero];
-                [self.assetWriter finishWritingWithCompletionHandler:^{
-                    NSLog(@"writer end ...");
-                }];
-                [self removeObserver:self forKeyPath:@"assetReader.status"];
+                [self removeObserver:self forKeyPath:kObserverWriterOutputStatus];
                 break;
                 
             case AVAssetWriterStatusFailed:
